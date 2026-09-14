@@ -1,3 +1,5 @@
+﻿
+
 <?php $__env->startSection('title', 'Radiátorok és árak Budapest | 22K panelradiátorok'); ?>
 <?php $__env->startSection('meta_description', 'Új 22K panelradiátorok Budapesten, raktárról. Méretek 600×400-tól 600×1400 mm-ig. Szűrhető árlista, külön termékoldalak.'); ?>
 <?php $__env->startSection('meta_keywords', 'radiátor árak Budapest, 22K panelradiátor, lapradiátor méretek'); ?>
@@ -13,7 +15,7 @@
     </nav>
 
     <h1 class="section-title">Radiátorok és árak</h1>
-    <p class="section-sub">Új 22K panelradiátorok raktárról. Kattintson a részletekre a külön termékoldalhoz. A mennyiség 1-50 között állítható.</p>
+    <p class="section-sub">Új 22K panelradiátorok raktárról, minden méretben. A mennyiség 1 és 50 között állítható.</p>
 
     <form id="productFilterForm" class="filter-bar admin-card mb-4" action="<?php echo e(route('products.index')); ?>" method="get" data-ajax-filter>
         <div class="row g-2 align-items-end">
@@ -59,9 +61,9 @@
 
     <div class="usp-strip mb-4">
         <div class="row g-3">
-            <div class="col-md-4"><div class="usp-item"><i class="bi bi-shield-check"></i><span>Új 22K radiátorok azonnal elérhetők</span></div></div>
-            <div class="col-md-4"><div class="usp-item"><i class="bi bi-lightning-charge"></i><span>Gyors ügyintézés, egyszerű rendelés</span></div></div>
-            <div class="col-md-4"><div class="usp-item"><i class="bi bi-tag"></i><span>Kiváló ár-érték arány</span></div></div>
+            <div class="col-md-4"><div class="usp-item"><i class="fa-solid fa-shield-halved"></i><span>Új 22K radiátorok azonnal elérhetők</span></div></div>
+            <div class="col-md-4"><div class="usp-item"><i class="fa-solid fa-bolt"></i><span>Gyors ügyintézés, egyszerű rendelés</span></div></div>
+            <div class="col-md-4"><div class="usp-item"><i class="fa-solid fa-tags"></i><span>Kiváló ár-érték arány</span></div></div>
         </div>
     </div>
 

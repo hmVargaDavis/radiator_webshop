@@ -2,12 +2,12 @@
     <div class="container py-2 py-lg-3">
         <div class="d-flex align-items-center justify-content-between gap-2">
             <button class="btn btn-link d-lg-none p-1 text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-label="Menü">
-                <i class="fa-solid fa-bars fs-2 text-primary"></i>
+                <i class="fa-solid fa-bars fs-3 text-primary"></i>
             </button>
 
             <a href="<?php echo e(route('home')); ?>" class="brand-lockup">
                 <span class="brand-mark" aria-hidden="true">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                         <rect x="3" y="5" width="3.2" height="14" rx="1" fill="currentColor"/>
                         <rect x="8" y="5" width="3.2" height="14" rx="1" fill="currentColor"/>
                         <rect x="13" y="5" width="3.2" height="14" rx="1" fill="currentColor"/>
@@ -30,10 +30,13 @@
 
             <div class="d-flex align-items-center gap-2 gap-lg-3">
                 <div class="header-phone d-none d-md-block">
-                    <a href="tel:<?php echo e(preg_replace('/\s+/', '', $shopPhoneDisplay ?? '06 20 466 2774')); ?>"><?php echo e($shopPhoneDisplay ?? '06 20 466 2774'); ?></a>
+                    <a href="tel:<?php echo e(preg_replace('/\s+/', '', $shopPhoneDisplay ?? '06 20 466 2774')); ?>">
+                        <i class="fa-solid fa-phone text-primary me-1"></i><?php echo e($shopPhoneDisplay ?? '06 20 466 2774'); ?>
+
+                    </a>
                     <small>H-P: 8:00 - 17:00</small>
                 </div>
-                <a class="d-md-none text-primary fs-4" href="tel:<?php echo e(preg_replace('/\s+/', '', $shopPhoneDisplay ?? '06 20 466 2774')); ?>" aria-label="Hívás">
+                <a class="d-md-none text-primary fs-4 lh-1" href="tel:<?php echo e(preg_replace('/\s+/', '', $shopPhoneDisplay ?? '06 20 466 2774')); ?>" aria-label="Hívás">
                     <i class="fa-solid fa-phone"></i>
                 </a>
                 <button type="button" class="btn-cart" id="openCartDrawer" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" aria-controls="cartDrawer">
@@ -53,20 +56,20 @@
     </div>
     <div class="offcanvas-body">
         <div class="list-group list-group-flush">
-            <a class="list-group-item list-group-item-action" href="<?php echo e(route('home')); ?>">Főoldal</a>
-            <a class="list-group-item list-group-item-action" href="<?php echo e(route('products.index')); ?>">Radiátorok / Árak</a>
-            <a class="list-group-item list-group-item-action" href="<?php echo e(route('shipping')); ?>">Szállítás</a>
-            <a class="list-group-item list-group-item-action" href="<?php echo e(route('package')); ?>">Csomag tartalma</a>
-            <a class="list-group-item list-group-item-action" href="<?php echo e(route('reviews.index')); ?>">Vélemények</a>
-            <a class="list-group-item list-group-item-action" href="<?php echo e(route('contact')); ?>">Kapcsolat</a>
-            <a class="list-group-item list-group-item-action" href="<?php echo e(route('cart.index')); ?>">Kosár</a>
+            <a class="list-group-item list-group-item-action fw-semibold" href="<?php echo e(route('home')); ?>">Főoldal</a>
+            <a class="list-group-item list-group-item-action fw-semibold" href="<?php echo e(route('products.index')); ?>">Radiátorok / Árak</a>
+            <a class="list-group-item list-group-item-action fw-semibold" href="<?php echo e(route('shipping')); ?>">Szállítás</a>
+            <a class="list-group-item list-group-item-action fw-semibold" href="<?php echo e(route('package')); ?>">Csomag tartalma</a>
+            <a class="list-group-item list-group-item-action fw-semibold" href="<?php echo e(route('reviews.index')); ?>">Vélemények</a>
+            <a class="list-group-item list-group-item-action fw-semibold" href="<?php echo e(route('contact')); ?>">Kapcsolat</a>
+            <a class="list-group-item list-group-item-action fw-semibold" href="<?php echo e(route('cart.index')); ?>">Kosár</a>
         </div>
     </div>
 </div>
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="cartDrawer" aria-labelledby="cartDrawerLabel">
     <div class="offcanvas-header border-bottom">
-        <h5 class="offcanvas-title" id="cartDrawerLabel"><i class="fa-solid fa-cart-shopping me-2"></i>Kosár</h5>
+        <h5 class="offcanvas-title" id="cartDrawerLabel"><i class="fa-solid fa-cart-shopping me-2 text-primary"></i>Kosár</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body p-0" id="cartDrawerBody" data-cart-drawer-body>

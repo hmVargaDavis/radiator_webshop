@@ -51,7 +51,7 @@
     <meta name="target" content="Budapest, Hungary">
     <meta name="rating" content="general">
     <meta name="revisit-after" content="7 days">
-    <meta name="theme-color" content="#1f6fd6">
+    <meta name="theme-color" content="#0167f7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="Radiátor Outlet">
@@ -103,7 +103,26 @@
 </main>
 
 <?php echo $__env->make('partials.footer', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
-<?php echo $__env->make('partials.bottom-nav', array_diff_key(get_defined_vars(), ['__data' => 1, '__path' => 1]))->render(); ?>
+
+<?php
+    $stickyCount = $cartCount ?? 0;
+    $stickyTotal = $cartSummary['total'] ?? 0;
+?>
+<div class="mobile-cart-bar" id="mobileCartBar">
+    <div class="d-flex align-items-center gap-2">
+        <span class="position-relative">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <span class="cart-badge <?php echo e($stickyCount ? '' : 'd-none'); ?>" data-cart-count><?php echo e($stickyCount); ?></span>
+        </span>
+        <span>
+            Kosár tartalma
+            <small class="d-block opacity-90" data-cart-bar-summary>
+                <?php echo e($stickyCount); ?> termék · <?php echo e(number_format($stickyTotal, 0, ',', '.')); ?> Ft
+            </small>
+        </span>
+    </div>
+    <a href="<?php echo e(route('cart.index')); ?>">Kosár megtekintése →</a>
+</div>
 
 <a class="mobile-call-fab" href="tel:<?php echo e(preg_replace('/\s+/', '', $shopPhoneDisplay ?? '06204662774')); ?>">
     <i class="fa-solid fa-phone"></i> Hívás
