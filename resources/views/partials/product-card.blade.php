@@ -1,4 +1,4 @@
-<div class="product-card">
+﻿<div class="product-card">
     <a href="{{ route('products.show', $product) }}" class="product-card-img">
         <img src="{{ $product->image_url }}" alt="{{ $product->name }}" loading="lazy" width="400" height="300">
     </a>
@@ -15,7 +15,7 @@
         </div>
         <div class="d-grid gap-2">
             <button type="submit" class="btn-primary-shop">
-                <i class="bi bi-cart3"></i> Kosárba
+                <i class="fa-solid fa-cart-shopping"></i> Kosárba
             </button>
             <a href="{{ route('products.show', $product) }}" class="btn-outline-shop text-center">Részletek</a>
         </div>

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="utf-8">
@@ -73,7 +73,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <link href="{{ asset('css/shop.css') }}" rel="stylesheet">
     <link href="{{ asset('css/mobile-app.css') }}" rel="stylesheet">
 
@@ -105,7 +105,7 @@
 @include('partials.bottom-nav')
 
 <a class="mobile-call-fab" href="tel:{{ preg_replace('/\s+/', '', $shopPhoneDisplay ?? '06204662774') }}">
-    <i class="bi bi-telephone-fill"></i> Hívás
+    <i class="fa-solid fa-phone"></i> Hívás
 </a>
 
 <div class="toast-container position-fixed p-3 app-toast-wrap" style="z-index:1080">

@@ -1,4 +1,4 @@
-<div id="productListMobile">
+﻿<div id="productListMobile">
 @forelse($products as $product)
     <div class="product-list-row">
         <a href="{{ route('products.show', $product) }}">
@@ -13,7 +13,7 @@
                 @csrf
                 <input type="hidden" name="product_id" value="{{ $product->id }}">
                 @include('partials.qty')
-                <button class="btn-primary-shop" type="submit"><i class="bi bi-cart3"></i> Kosárba</button>
+                <button class="btn-primary-shop" type="submit"><i class="fa-solid fa-cart-shopping"></i> Kosárba</button>
                 <a href="{{ route('products.show', $product) }}" class="btn-outline-shop">Részletek</a>
             </form>
         </div>

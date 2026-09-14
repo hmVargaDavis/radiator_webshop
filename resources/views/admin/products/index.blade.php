@@ -1,9 +1,9 @@
-@extends('layouts.admin')
+﻿@extends('layouts.admin')
 @section('title', 'Termékek')
 @section('content')
 <div class="d-flex justify-content-between align-items-center mb-3 gap-2 flex-wrap">
     <p class="text-muted mb-0">Készlet, árak, SEO mezők</p>
-    <a href="{{ route('admin.products.create') }}" class="polaris-btn polaris-btn-primary" data-spa-link><i class="bi bi-plus-lg"></i> Termék hozzáadása</a>
+    <a href="{{ route('admin.products.create') }}" class="polaris-btn polaris-btn-primary" data-spa-link><i class="fa-solid fa-plus"></i> Termék hozzáadása</a>
 </div>
 <div class="p-card">
     <div class="table-responsive">

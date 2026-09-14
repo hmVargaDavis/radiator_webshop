@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('title', $product->meta_title ?: $product->name.' | Radiátor Outlet Budapest')
 @section('meta_description', $product->meta_description ?: \Illuminate\Support\Str::limit(strip_tags($product->ai_description ?: $product->short_description), 155))
@@ -65,7 +65,7 @@
                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                     @include('partials.qty')
                     <button type="submit" class="btn-primary-shop">
-                        <i class="bi bi-cart3"></i> Kosárba
+                        <i class="fa-solid fa-cart-shopping"></i> Kosárba
                     </button>
                 </form>
 

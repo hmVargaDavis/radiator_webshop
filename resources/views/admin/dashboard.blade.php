@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+﻿@extends('layouts.admin')
 @section('title', 'Kezdőlap')
 
 @section('content')
@@ -154,7 +154,7 @@
                     Jóváhagyásra váró vélemények <span class="p-badge yellow">{{ $d['pending_reviews'] }}</span>
                 </a>
                 <a class="polaris-btn polaris-btn-ghost justify-content-between" href="{{ route('admin.seo') }}" data-spa-link>
-                    SEO állapot ellenőrzése <i class="bi bi-arrow-right"></i>
+                    SEO állapot ellenőrzése <i class="fa-solid fa-arrow-right"></i>
                 </a>
                 <a class="polaris-btn polaris-btn-ghost justify-content-between" href="{{ route('admin.products.index') }}" data-spa-link>
                     Aktív termékek <span class="p-badge green">{{ $d['products'] }}</span>

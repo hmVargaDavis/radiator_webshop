@@ -37,7 +37,7 @@
             <div class="p-card-title">SEO / GEO checklist</div>
             @foreach($r['checklist'] as $item)
                 <div class="check-row">
-                    <span class="check-ico {{ $item['ok'] ? 'ok' : 'bad' }}"><i class="bi {{ $item['ok'] ? 'bi-check-lg' : 'bi-x-lg' }}"></i></span>
+                    <span class="check-ico {{ $item['ok'] ? 'ok' : 'bad' }}"><i class="fa-solid {{ $item['ok'] ? 'fa-check' : 'fa-xmark' }}"></i></span>
                     <div>
                         <strong>{{ $item['label'] }}</strong>
                         <div class="small text-muted">{{ $item['hint'] }}</div>

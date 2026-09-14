@@ -1,6 +1,6 @@
-<?php if(($cartData['count'] ?? 0) < 1): ?>
+﻿<?php if(($cartData['count'] ?? 0) < 1): ?>
     <div class="p-4 text-center">
-        <i class="bi bi-cart3 fs-1 text-muted"></i>
+        <i class="fa-solid fa-cart-shopping fs-1 text-muted"></i>
         <p class="mt-2 mb-3 text-muted">A kosár üres.</p>
         <a href="<?php echo e(route('products.index')); ?>" class="btn-primary-shop" data-bs-dismiss="offcanvas">Radiátorok megtekintése</a>
     </div>

@@ -1,8 +1,8 @@
-<header class="site-header">
+﻿<header class="site-header">
     <div class="container py-2 py-lg-3">
         <div class="d-flex align-items-center justify-content-between gap-2">
             <button class="btn btn-link d-lg-none p-1 text-decoration-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav" aria-label="Menü">
-                <i class="bi bi-list fs-2 text-primary"></i>
+                <i class="fa-solid fa-bars fs-2 text-primary"></i>
             </button>
 
             <a href="<?php echo e(route('home')); ?>" class="brand-lockup">
@@ -34,10 +34,10 @@
                     <small>H-P: 8:00 - 17:00</small>
                 </div>
                 <a class="d-md-none text-primary fs-4" href="tel:<?php echo e(preg_replace('/\s+/', '', $shopPhoneDisplay ?? '06 20 466 2774')); ?>" aria-label="Hívás">
-                    <i class="bi bi-telephone"></i>
+                    <i class="fa-solid fa-phone"></i>
                 </a>
                 <button type="button" class="btn-cart" id="openCartDrawer" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" aria-controls="cartDrawer">
-                    <i class="bi bi-cart3"></i>
+                    <i class="fa-solid fa-cart-shopping"></i>
                     <span class="cart-label">Kosár</span>
                     <span class="cart-badge <?php echo e(($cartCount ?? 0) ? '' : 'd-none'); ?>" data-cart-count><?php echo e($cartCount ?? 0); ?></span>
                 </button>
@@ -66,7 +66,7 @@
 
 <div class="offcanvas offcanvas-end" tabindex="-1" id="cartDrawer" aria-labelledby="cartDrawerLabel">
     <div class="offcanvas-header border-bottom">
-        <h5 class="offcanvas-title" id="cartDrawerLabel"><i class="bi bi-cart3 me-2"></i>Kosár</h5>
+        <h5 class="offcanvas-title" id="cartDrawerLabel"><i class="fa-solid fa-cart-shopping me-2"></i>Kosár</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
     </div>
     <div class="offcanvas-body p-0" id="cartDrawerBody" data-cart-drawer-body>

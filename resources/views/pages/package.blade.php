@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 @section('title', 'A csomag tartalma | Radiátor Outlet Budapest')
 @section('meta_description', 'Minden radiátorhoz: fali konzolok, szelepek, tömítő elemek, rögzítő csavarok. Radiátor Outlet Budapest.')
 @section('canonical', route('package'))
@@ -12,7 +12,7 @@
     </nav>
     <div class="package-box">
         <div class="d-flex align-items-center gap-2 mb-3">
-            <i class="bi bi-box-seam fs-3 text-primary"></i>
+            <i class="fa-solid fa-box-open fs-3 text-primary"></i>
             <h1 class="section-title mb-0 h3">A csomag tartalmazza</h1>
         </div>
         <p class="text-muted mb-4">{{ $packageIntro }}</p>

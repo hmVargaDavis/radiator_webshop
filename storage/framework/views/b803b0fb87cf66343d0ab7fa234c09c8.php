@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="utf-8">
@@ -7,8 +7,8 @@
     <title>Admin belépés | Radiátor Outlet</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-    <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="<?php echo e(asset('css/admin.css')); ?>" rel="stylesheet">
 </head>
 <body class="polaris-app d-flex align-items-center justify-content-center" style="min-height:100dvh;padding:1rem">
 <div style="width:min(420px,100%)">
@@ -18,12 +18,12 @@
             <h1 class="h4 fw-bold mb-1">Belépés az adminba</h1>
             <p class="text-muted small mb-0">Radiátor Outlet Budapest</p>
         </div>
-        @if(session('error'))<div class="polaris-banner danger">{{ session('error') }}</div>@endif
-        <form method="post" action="{{ route('admin.login.submit') }}">
-            @csrf
+        <?php if(session('error')): ?><div class="polaris-banner danger"><?php echo e(session('error')); ?></div><?php endif; ?>
+        <form method="post" action="<?php echo e(route('admin.login.submit')); ?>">
+            <?php echo csrf_field(); ?>
             <div class="mb-3">
                 <label class="form-label fw-semibold">E-mail</label>
-                <input type="email" name="email" class="form-control form-control-lg" required value="{{ old('email', config('shop.admin_email')) }}" autocomplete="username">
+                <input type="email" name="email" class="form-control form-control-lg" required value="<?php echo e(old('email', config('shop.admin_email'))); ?>" autocomplete="username">
             </div>
             <div class="mb-3">
                 <label class="form-label fw-semibold">Jelszó</label>
@@ -35,3 +35,4 @@
 </div>
 </body>
 </html>
+<?php /**PATH C:\Users\vargad\Documents\mgan\radiator_webshop\resources\views/admin/login.blade.php ENDPATH**/ ?>

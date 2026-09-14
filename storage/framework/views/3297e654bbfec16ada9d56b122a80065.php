@@ -1,10 +1,10 @@
-<footer class="site-footer" id="kapcsolat-footer">
+﻿<footer class="site-footer" id="kapcsolat-footer">
     <div class="container">
         <div class="row g-4">
             <div class="col-md-4">
                 <div class="brand-lockup mb-2">
                     <span class="brand-mark">
-                        <i class="bi bi-columns-gap"></i>
+                        <i class="fa-solid fa-temperature-high"></i>
                     </span>
                     <span>
                         <p class="brand-title">Radiátor Outlet Budapest</p>
@@ -26,14 +26,14 @@
             </div>
             <div class="col-6 col-md-3">
                 <h6 class="fw-bold">Szállítás</h6>
-                <p class="mb-1"><i class="bi bi-truck text-primary me-1"></i> Budapest: <?php echo e(number_format($shopShippingFee ?? 2500, 0, ',', '.')); ?> Ft / rendelés</p>
+                <p class="mb-1"><i class="fa-solid fa-truck text-primary me-1"></i> Budapest: <?php echo e(number_format($shopShippingFee ?? 2500, 0, ',', '.')); ?> Ft / rendelés</p>
                 <p class="mb-0 text-muted">Vidéki kiszállítás jelenleg nincs.</p>
             </div>
             <div class="col-md-3">
                 <h6 class="fw-bold">Kapcsolat</h6>
-                <p class="mb-1"><i class="bi bi-geo-alt text-primary me-1"></i> <?php echo e(\App\Models\SiteSetting::getValue('pickup_address') ?? 'Budapest XXIII. kerület, Soroksár'); ?></p>
-                <p class="mb-1"><i class="bi bi-telephone text-primary me-1"></i> <a href="tel:<?php echo e(preg_replace('/\s+/', '', $shopPhoneDisplay ?? '')); ?>"><?php echo e($shopPhoneDisplay); ?></a></p>
-                <p class="mb-0 text-muted"><i class="bi bi-clock text-primary me-1"></i> <?php echo e(\App\Models\SiteSetting::getValue('opening_hours') ?? 'előzetes telefonos egyeztetés alapján'); ?></p>
+                <p class="mb-1"><i class="fa-solid fa-location-dot text-primary me-1"></i> <?php echo e(\App\Models\SiteSetting::getValue('pickup_address') ?? 'Budapest XXIII. kerület, Soroksár'); ?></p>
+                <p class="mb-1"><i class="fa-solid fa-phone text-primary me-1"></i> <a href="tel:<?php echo e(preg_replace('/\s+/', '', $shopPhoneDisplay ?? '')); ?>"><?php echo e($shopPhoneDisplay); ?></a></p>
+                <p class="mb-0 text-muted"><i class="fa-solid fa-clock text-primary me-1"></i> <?php echo e(\App\Models\SiteSetting::getValue('opening_hours') ?? 'előzetes telefonos egyeztetés alapján'); ?></p>
             </div>
         </div>
         <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">

@@ -10,7 +10,7 @@
                 <article class="review-card">
                     <div class="stars">
                         @for($i=1;$i<=5;$i++)
-                            <i class="bi {{ $i <= $review->rating ? 'bi-star-fill' : 'bi-star' }}"></i>
+                            <i class="{{ $i <= $review->rating ? 'fa-solid' : 'fa-regular' }} fa-star"></i>
                         @endfor
                     </div>
                     <p class="review-text">„{{ $review->content }}”</p>

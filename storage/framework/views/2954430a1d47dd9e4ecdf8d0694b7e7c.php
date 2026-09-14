@@ -1,3 +1,5 @@
+﻿
+
 <?php $__env->startSection('title', \App\Models\SiteSetting::getValue('seo_title') ?? 'Radiátor Outlet Budapest | 22K panelradiátorok raktárról'); ?>
 <?php $__env->startSection('meta_description', \App\Models\SiteSetting::getValue('seo_description') ?? 'Új 22K acéllemez panelradiátorok Budapesten, raktárról.'); ?>
 <?php $__env->startSection('meta_keywords', '22K radiátor Budapest, panelradiátor Budapest, radiátor kiszállítás Budapest'); ?>
@@ -16,15 +18,15 @@
                     <a href="<?php echo e(route('shipping')); ?>" class="btn-outline-shop">Szállítás részletei</a>
                 </div>
                 <a href="<?php echo e(route('shipping')); ?>" class="shipping-banner">
-                    <i class="bi bi-truck"></i>
+                    <i class="fa-solid fa-truck"></i>
                     Kiszállítás Budapest teljes területén – <?php echo e(number_format($shippingFee, 0, ',', '.')); ?> Ft →
                 </a>
                 <div class="usp-strip">
                     <div class="row g-3">
-                        <div class="col-6 col-md-3"><div class="usp-item"><i class="bi bi-shield-check"></i><span>Új 22K radiátorok</span></div></div>
-                        <div class="col-6 col-md-3"><div class="usp-item"><i class="bi bi-lightning-charge"></i><span>Gyors ügyintézés</span></div></div>
-                        <div class="col-6 col-md-3"><div class="usp-item"><i class="bi bi-tag"></i><span>Átlátható árak</span></div></div>
-                        <div class="col-6 col-md-3"><div class="usp-item"><i class="bi bi-truck"></i><span>Csak Budapest</span></div></div>
+                        <div class="col-6 col-md-3"><div class="usp-item"><i class="fa-solid fa-shield-halved"></i><span>Új 22K radiátorok</span></div></div>
+                        <div class="col-6 col-md-3"><div class="usp-item"><i class="fa-solid fa-bolt"></i><span>Gyors ügyintézés</span></div></div>
+                        <div class="col-6 col-md-3"><div class="usp-item"><i class="fa-solid fa-tags"></i><span>Átlátható árak</span></div></div>
+                        <div class="col-6 col-md-3"><div class="usp-item"><i class="fa-solid fa-truck"></i><span>Csak Budapest</span></div></div>
                     </div>
                 </div>
             </div>
@@ -65,21 +67,21 @@
         <div class="row g-3">
             <div class="col-md-4">
                 <a href="<?php echo e(route('shipping')); ?>" class="admin-card d-block h-100 text-decoration-none">
-                    <i class="bi bi-truck fs-3 text-primary"></i>
+                    <i class="fa-solid fa-truck fs-3 text-primary"></i>
                     <h3 class="h5 fw-bold mt-2 text-dark">Szállítás</h3>
                     <p class="text-muted mb-0">Budapest: <?php echo e(number_format($shippingFee, 0, ',', '.')); ?> Ft / rendelés</p>
                 </a>
             </div>
             <div class="col-md-4">
                 <a href="<?php echo e(route('package')); ?>" class="admin-card d-block h-100 text-decoration-none">
-                    <i class="bi bi-box-seam fs-3 text-primary"></i>
+                    <i class="fa-solid fa-box-open fs-3 text-primary"></i>
                     <h3 class="h5 fw-bold mt-2 text-dark">Csomag tartalma</h3>
                     <p class="text-muted mb-0">Konzolok, szelepek, tömítők, csavarok</p>
                 </a>
             </div>
             <div class="col-md-4">
                 <a href="<?php echo e(route('contact')); ?>" class="admin-card d-block h-100 text-decoration-none">
-                    <i class="bi bi-geo-alt fs-3 text-primary"></i>
+                    <i class="fa-solid fa-location-dot fs-3 text-primary"></i>
                     <h3 class="h5 fw-bold mt-2 text-dark">Kapcsolat / átvétel</h3>
                     <p class="text-muted mb-0"><?php echo e($pickupAddress); ?></p>
                 </a>
@@ -107,7 +109,7 @@
                     <article class="review-card">
                         <div class="stars">
                             <?php for($i = 1; $i <= 5; $i++): ?>
-                                <i class="bi <?php echo e($i <= $review->rating ? 'bi-star-fill' : 'bi-star'); ?>"></i>
+                                <i class="<?php echo e($i <= $review->rating ? 'fa-solid' : 'fa-regular'); ?> fa-star"></i>
                             <?php endfor; ?>
                         </div>
                         <p class="review-text">„<?php echo e(\Illuminate\Support\Str::limit($review->content, 120)); ?>”</p>

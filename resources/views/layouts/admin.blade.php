@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="hu">
 <head>
     <meta charset="utf-8">
@@ -14,27 +14,27 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
     <link href="{{ asset('css/admin.css') }}" rel="stylesheet">
     @stack('head')
 </head>
 <body class="polaris-app" data-admin-spa="1">
 @php
     $adminNav = [
-        ['route' => 'admin.dashboard', 'match' => 'admin.dashboard', 'label' => 'Kezdőlap', 'icon' => 'house'],
-        ['route' => 'admin.orders.index', 'match' => 'admin.orders.*', 'label' => 'Rendelések', 'icon' => 'bag-check'],
-        ['route' => 'admin.products.index', 'match' => 'admin.products.*', 'label' => 'Termékek', 'icon' => 'box-seam'],
-        ['route' => 'admin.analytics', 'match' => 'admin.analytics', 'label' => 'Analitika', 'icon' => 'graph-up-arrow'],
-        ['route' => 'admin.seo', 'match' => 'admin.seo', 'label' => 'SEO', 'icon' => 'search'],
-        ['route' => 'admin.reviews.index', 'match' => 'admin.reviews.*', 'label' => 'Vélemények', 'icon' => 'chat-square-quote'],
-        ['route' => 'admin.settings.edit', 'match' => 'admin.settings.*', 'label' => 'Beállítások', 'icon' => 'gear'],
+        ['route' => 'admin.dashboard', 'match' => 'admin.dashboard', 'label' => 'Kezdőlap', 'icon' => 'fa-solid fa-house'],
+        ['route' => 'admin.orders.index', 'match' => 'admin.orders.*', 'label' => 'Rendelések', 'icon' => 'fa-solid fa-bag-shopping'],
+        ['route' => 'admin.products.index', 'match' => 'admin.products.*', 'label' => 'Termékek', 'icon' => 'fa-solid fa-box-open'],
+        ['route' => 'admin.analytics', 'match' => 'admin.analytics', 'label' => 'Analitika', 'icon' => 'fa-solid fa-chart-line'],
+        ['route' => 'admin.seo', 'match' => 'admin.seo', 'label' => 'SEO', 'icon' => 'fa-solid fa-magnifying-glass'],
+        ['route' => 'admin.reviews.index', 'match' => 'admin.reviews.*', 'label' => 'Vélemények', 'icon' => 'fa-solid fa-comments'],
+        ['route' => 'admin.settings.edit', 'match' => 'admin.settings.*', 'label' => 'Beállítások', 'icon' => 'fa-solid fa-gear'],
     ];
 @endphp
 
 <div class="polaris-shell">
     <aside class="polaris-sidebar d-none d-lg-flex">
         <div class="polaris-brand">
-            <span class="polaris-logo">R</span>
+            <span class="polaris-logo"><i class="fa-solid fa-temperature-high"></i></span>
             <div>
                 <strong>Radiátor Outlet</strong>
                 <small>Admin</small>
@@ -43,15 +43,15 @@
         <nav class="polaris-nav">
             @foreach($adminNav as $item)
                 <a href="{{ route($item['route']) }}" class="polaris-nav-link {{ request()->routeIs($item['match']) ? 'active' : '' }}" data-spa-link>
-                    <i class="bi bi-{{ $item['icon'] }}"></i>
+                    <i class="{{ $item['icon'] }}"></i>
                     <span>{{ $item['label'] }}</span>
                 </a>
             @endforeach
         </nav>
         <div class="polaris-side-foot">
-            <a href="{{ url('/') }}" class="polaris-nav-link" target="_blank" rel="noopener"><i class="bi bi-box-arrow-up-right"></i><span>Webshop megnyitása</span></a>
+            <a href="{{ url('/') }}" class="polaris-nav-link" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i><span>Webshop megnyitása</span></a>
             <form method="post" action="{{ route('admin.logout') }}">@csrf
-                <button class="polaris-nav-link w-100 border-0" type="submit"><i class="bi bi-box-arrow-right"></i><span>Kijelentkezés</span></button>
+                <button class="polaris-nav-link w-100 border-0" type="submit"><i class="fa-solid fa-right-from-bracket"></i><span>Kijelentkezés</span></button>
             </form>
         </div>
     </aside>
@@ -62,12 +62,12 @@
                 <div class="polaris-page-title" data-spa-title>@yield('title', 'Kezdőlap')</div>
             </div>
             <form class="polaris-search" action="{{ route('admin.search') }}" method="get" id="adminSearchForm" data-spa-ignore="0">
-                <i class="bi bi-search"></i>
+                <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="search" name="q" id="adminSearchInput" placeholder="Keresés: rendelés, termék, vevő..." value="{{ request('q') }}" autocomplete="off">
             </form>
             <div class="polaris-top-actions">
                 <a href="{{ route('admin.products.create') }}" class="polaris-btn polaris-btn-primary d-none d-md-inline-flex" data-spa-link>
-                    <i class="bi bi-plus-lg"></i> Termék
+                    <i class="fa-solid fa-plus"></i> Termék
                 </a>
                 <a href="{{ url('/') }}" class="polaris-btn polaris-btn-ghost d-lg-none" target="_blank">Shop</a>
             </div>
@@ -88,19 +88,19 @@
 
 <nav class="polaris-tabbar d-lg-none" aria-label="Admin mobil">
     <a href="{{ route('admin.dashboard') }}" class="polaris-tab {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}" data-spa-link>
-        <i class="bi bi-house"></i><span>Kezdőlap</span>
+        <i class="fa-solid fa-house"></i><span>Kezdőlap</span>
     </a>
     <a href="{{ route('admin.orders.index') }}" class="polaris-tab {{ request()->routeIs('admin.orders.*') ? 'active' : '' }}" data-spa-link>
-        <i class="bi bi-bag-check"></i><span>Rendelés</span>
+        <i class="fa-solid fa-bag-shopping"></i><span>Rendelés</span>
     </a>
     <a href="{{ route('admin.products.index') }}" class="polaris-tab {{ request()->routeIs('admin.products.*') ? 'active' : '' }}" data-spa-link>
-        <i class="bi bi-box-seam"></i><span>Termék</span>
+        <i class="fa-solid fa-box-open"></i><span>Termék</span>
     </a>
     <a href="{{ route('admin.analytics') }}" class="polaris-tab {{ request()->routeIs('admin.analytics') ? 'active' : '' }}" data-spa-link>
-        <i class="bi bi-graph-up"></i><span>Analitika</span>
+        <i class="fa-solid fa-chart-line"></i><span>Analitika</span>
     </a>
     <a href="{{ route('admin.seo') }}" class="polaris-tab {{ request()->routeIs('admin.seo') ? 'active' : '' }}" data-spa-link>
-        <i class="bi bi-search"></i><span>SEO</span>
+        <i class="fa-solid fa-magnifying-glass"></i><span>SEO</span>
     </a>
 </nav>
 

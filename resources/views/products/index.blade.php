@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 
 @section('title', 'Radiátorok és árak Budapest | 22K panelradiátorok')
 @section('meta_description', 'Új 22K panelradiátorok Budapesten, raktárról. Méretek 600×400-tól 600×1400 mm-ig. Szűrhető árlista, külön termékoldalak.')
@@ -61,9 +61,9 @@
 
     <div class="usp-strip mb-4">
         <div class="row g-3">
-            <div class="col-md-4"><div class="usp-item"><i class="bi bi-shield-check"></i><span>Új 22K radiátorok azonnal elérhetők</span></div></div>
-            <div class="col-md-4"><div class="usp-item"><i class="bi bi-lightning-charge"></i><span>Gyors ügyintézés, egyszerű rendelés</span></div></div>
-            <div class="col-md-4"><div class="usp-item"><i class="bi bi-tag"></i><span>Kiváló ár-érték arány</span></div></div>
+            <div class="col-md-4"><div class="usp-item"><i class="fa-solid fa-shield-halved"></i><span>Új 22K radiátorok azonnal elérhetők</span></div></div>
+            <div class="col-md-4"><div class="usp-item"><i class="fa-solid fa-bolt"></i><span>Gyors ügyintézés, egyszerű rendelés</span></div></div>
+            <div class="col-md-4"><div class="usp-item"><i class="fa-solid fa-tags"></i><span>Kiváló ár-érték arány</span></div></div>
         </div>
     </div>
 

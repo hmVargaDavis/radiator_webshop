@@ -1,4 +1,4 @@
-@extends('layouts.app')
+﻿@extends('layouts.app')
 @section('title', 'Radiátor kiszállítás Budapest | 2.500 Ft / rendelés')
 @section('meta_description', 'Kiszállítás Budapest teljes területén 2.500 Ft / rendelés. Vidéki kiszállítás jelenleg nincs. Radiátor Outlet Budapest, átvétel Soroksáron.')
 @section('meta_keywords', 'radiátor szállítás Budapest, radiátor házhozszállítás, budapesti radiátor kiszállítás')
@@ -12,7 +12,7 @@
         </ol>
     </nav>
     <h1 class="section-title">Szállítás Budapesten</h1>
-    <div class="shipping-banner d-inline-flex mb-3"><i class="bi bi-truck"></i> Kiszállítás Budapest teljes területén – {{ number_format($shippingFee ?? $shopShippingFee ?? 2500, 0, ',', '.') }} Ft / rendelés.</div>
+    <div class="shipping-banner d-inline-flex mb-3"><i class="fa-solid fa-truck"></i> Kiszállítás Budapest teljes területén – {{ number_format($shippingFee ?? $shopShippingFee ?? 2500, 0, ',', '.') }} Ft / rendelés.</div>
     <p class="fw-semibold text-danger">Vidéki kiszállítás jelenleg nincs.</p>
     <p class="text-muted">A szállítási díjat a kosár végösszegéhez automatikusan hozzáadjuk. Egy rendelésen belül több radiátor esetén is egyszer számítjuk fel. Budapest I-XXIII. kerületében elérhető.</p>
     <div class="row g-3 mb-4">
