@@ -36,9 +36,10 @@
     document.querySelectorAll('[data-cart-total-label]').forEach(function (el) {
       el.textContent = data.label || (count + ' termék');
     });
-    // legacy sticky bar (if present)
-    var bar = document.getElementById('mobileCartBar');
-    if (bar) bar.classList.toggle('d-none', !count);
+    var totalLabel = (data.total_formatted || '0 Ft');
+    document.querySelectorAll('[data-cart-bar-summary]').forEach(function (el) {
+      el.textContent = count + ' termék · ' + totalLabel;
+    });
     if (data.total_formatted) {
       document.querySelectorAll('[data-cart-total]').forEach(function (el) {
         el.textContent = data.total_formatted;

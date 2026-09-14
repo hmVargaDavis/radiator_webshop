@@ -10,22 +10,41 @@
             <li class="breadcrumb-item active">Kapcsolat</li>
         </ol>
     </nav>
-    <h1 class="section-title">Kapcsolat - Budapest</h1>
+    <h1 class="section-title">Kapcsolat</h1>
     <p class="section-sub">Kérdése van? Keressen minket bizalommal.</p>
     <div class="row g-4">
-        <div class="col-md-6">
+        <div class="col-md-7">
             <div class="admin-card h-100">
-                <p><i class="fa-solid fa-location-dot text-primary me-2"></i><strong>Személyes átvétel:</strong><br>{{ $pickupAddress ?? 'Budapest XXIII. kerület, Soroksár' }}</p>
-                <p><i class="fa-solid fa-phone text-primary me-2"></i><strong>Telefon:</strong><br>
-                    <a href="tel:{{ preg_replace('/\s+/', '', $phoneDisplay ?? $shopPhoneDisplay) }}">{{ $phoneDisplay ?? $shopPhoneDisplay }}</a>
-                </p>
-                <p><i class="fa-solid fa-clock text-primary me-2"></i><strong>Nyitvatartás:</strong><br>{{ $openingHours ?? 'előzetes telefonos egyeztetés alapján' }}</p>
-                <a class="btn-primary-shop" href="tel:{{ preg_replace('/\s+/', '', $phoneDisplay ?? $shopPhoneDisplay) }}"><i class="fa-solid fa-phone"></i> Hívás</a>
+                <div class="contact-list-item">
+                    <span class="contact-ico"><i class="fa-solid fa-location-dot"></i></span>
+                    <div>
+                        <strong>Személyes átvétel</strong>
+                        <p class="mb-0 text-muted">{{ $pickupAddress ?? 'Budapest XXIII. kerület, Soroksár' }}</p>
+                    </div>
+                </div>
+                <div class="contact-list-item">
+                    <span class="contact-ico"><i class="fa-solid fa-phone"></i></span>
+                    <div>
+                        <strong>Telefonszám</strong>
+                        <p class="mb-0"><a href="tel:{{ preg_replace('/\s+/', '', $phoneDisplay ?? $shopPhoneDisplay) }}">{{ $phoneDisplay ?? $shopPhoneDisplay }}</a></p>
+                    </div>
+                </div>
+                <div class="contact-list-item mb-3">
+                    <span class="contact-ico"><i class="fa-solid fa-clock"></i></span>
+                    <div>
+                        <strong>Nyitvatartás</strong>
+                        <p class="mb-0 text-muted">{{ $openingHours ?? 'előzetes telefonos egyeztetés alapján' }}</p>
+                    </div>
+                </div>
+                <a class="btn-primary-shop w-100" href="tel:{{ preg_replace('/\s+/', '', $phoneDisplay ?? $shopPhoneDisplay) }}">
+                    <i class="fa-solid fa-phone"></i> Hívás indítása: {{ $phoneDisplay ?? $shopPhoneDisplay }}
+                </a>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-5">
             <div class="sidebar-box h-100">
-                <p class="mb-3"><i class="fa-solid fa-truck text-primary me-1"></i> Kiszállítás Budapest teljes területén – {{ number_format($shippingFee ?? $shopShippingFee ?? 2500, 0, ',', '.') }} Ft / rendelés.</p>
+                <p class="mb-2 fw-bold text-navy"><i class="fa-solid fa-truck text-primary me-1"></i> Kiszállítás csak Budapesten</p>
+                <p class="mb-3 text-muted">A kiszállítás díja {{ number_format($shippingFee ?? $shopShippingFee ?? 2500, 0, ',', '.') }} Ft. Vidéki kiszállítás jelenleg nem elérhető.</p>
                 <a href="{{ route('shipping') }}" class="btn-outline-shop">Szállítás részletei</a>
             </div>
         </div>

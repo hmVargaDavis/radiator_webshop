@@ -15,7 +15,7 @@
     </nav>
 
     <h1 class="section-title">Radiátorok és árak</h1>
-    <p class="section-sub">Új 22K panelradiátorok raktárról. Kattintson a részletekre a külön termékoldalhoz. A mennyiség 1-50 között állítható.</p>
+    <p class="section-sub">Új 22K panelradiátorok raktárról, minden méretben. A mennyiség 1 és 50 között állítható.</p>
 
     <form id="productFilterForm" class="filter-bar admin-card mb-4" action="{{ route('products.index') }}" method="get" data-ajax-filter>
         <div class="row g-2 align-items-end">

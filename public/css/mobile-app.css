@@ -1,8 +1,8 @@
-/* ===== Mobile app shell ===== */
+/* Mobile webshop refinements (mockup-aligned) */
 :root {
-  --app-nav-h: 64px;
   --safe-bottom: env(safe-area-inset-bottom, 0px);
   --safe-top: env(safe-area-inset-top, 0px);
+  --cart-bar-h: 64px;
 }
 
 html {
@@ -10,174 +10,75 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
-  overscroll-behavior-y: contain;
-}
-
 .site-header {
   padding-top: var(--safe-top);
 }
 
-.app-bottom-nav {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1045;
-  height: calc(var(--app-nav-h) + var(--safe-bottom));
-  padding: 0 4px var(--safe-bottom);
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-top: 1px solid var(--border);
-  display: none;
-  grid-template-columns: repeat(5, 1fr);
-  align-items: stretch;
-  box-shadow: 0 -8px 24px rgba(22, 50, 92, 0.08);
-}
-
-.app-tab {
-  border: 0;
-  background: transparent;
-  color: #6b7c8f;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  font-size: .68rem;
-  font-weight: 700;
-  text-decoration: none;
-  min-height: var(--app-nav-h);
-  padding: 6px 2px;
-  font-family: inherit;
-  line-height: 1.1;
-}
-
-.app-tab i {
-  font-size: 1.25rem;
-  line-height: 1;
-}
-
-.app-tab.active,
-.app-tab:hover {
-  color: var(--brand-blue);
-}
-
-.app-tab-icon-wrap {
-  position: relative;
-  display: inline-flex;
-}
-
-.app-tab-badge {
-  top: -8px;
-  right: -12px;
-  min-width: 18px;
-  height: 18px;
-  font-size: .65rem;
+.mobile-cart-bar {
+  padding-bottom: calc(.8rem + var(--safe-bottom));
 }
 
 .mobile-call-fab {
-  bottom: calc(var(--app-nav-h) + var(--safe-bottom) + 12px);
-}
-
-.mobile-cart-bar {
-  display: none !important;
+  bottom: calc(var(--cart-bar-h) + var(--safe-bottom) + 12px);
 }
 
 .app-toast-wrap {
   right: 0;
-  bottom: calc(var(--app-nav-h) + var(--safe-bottom) + 8px);
+  bottom: calc(var(--cart-bar-h) + var(--safe-bottom) + 8px);
 }
 
 @media (min-width: 992px) {
-  .app-toast-wrap {
-    bottom: 1rem;
-  }
+  .app-toast-wrap { bottom: 1rem; }
+  .mobile-cart-bar { display: none !important; }
 }
 
-/* Cart as bottom sheet on phones */
 @media (max-width: 991.98px) {
+  body {
+    padding-bottom: calc(var(--cart-bar-h) + var(--safe-bottom) + 8px) !important;
+  }
+
   #cartDrawer.offcanvas-end {
     left: 0;
     right: 0;
     width: 100% !important;
     max-width: 100%;
     border-left: 0;
+    top: auto;
+    height: min(88vh, 720px);
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
   }
-}
 
-@media (max-width: 991.98px) {
-  .app-bottom-nav { display: grid; }
-  body {
-    padding-bottom: calc(var(--app-nav-h) + var(--safe-bottom) + 12px) !important;
-  }
-  .site-footer {
-    margin-bottom: 8px;
-  }
   .hero-media {
     min-height: 220px;
-    border-radius: 16px;
+    border-radius: 10px;
   }
   .hero-media img { min-height: 220px; }
+
   .btn-primary-shop,
   .btn-outline-shop {
-    min-height: 48px;
-    font-size: 1rem;
+    min-height: 46px;
   }
-  .qty-control {
-    height: 48px;
-  }
-  .qty-control button {
-    width: 48px;
-    height: 48px;
-  }
+
+  .qty-control { height: 46px; }
+  .qty-control button { width: 44px; height: 46px; }
   .qty-control select,
-  .qty-control .qty-value {
-    height: 48px;
-    font-size: 1.05rem;
-  }
-  .product-card {
-    padding: .85rem;
-    border-radius: 14px;
-  }
+  .qty-control .qty-value { height: 46px; }
+
   .filter-bar {
     position: sticky;
     top: 62px;
     z-index: 20;
-    margin-left: -0.25rem;
-    margin-right: -0.25rem;
-    border-radius: 14px !important;
     box-shadow: var(--shadow-soft);
   }
-  .section { padding: 2rem 0; }
-  #cartDrawer {
-    --bs-offcanvas-height: min(88vh, 720px);
-  }
-  #cartDrawer.offcanvas-end {
-    top: auto;
-    height: var(--bs-offcanvas-height);
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-  }
 }
 
-/* iPhone Duo / fold-ish wide phones */
 @media (min-width: 700px) and (max-width: 991.98px) {
-  .app-bottom-nav {
-    max-width: 560px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 18px 18px 0 0;
+  .product-list-row {
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
   }
-}
-
-/* Page transition hint for SPA-like feel */
-main.app-page-enter {
-  animation: appFade .22s ease;
-}
-
-@keyframes appFade {
-  from { opacity: .45; transform: translateY(6px); }
-  to { opacity: 1; transform: none; }
+  .product-list-row .row-actions {
+    grid-column: auto;
+  }
 }

@@ -11,18 +11,40 @@
         </ol>
     </nav>
     <div class="package-box">
-        <div class="d-flex align-items-center gap-2 mb-3">
-            <i class="fa-solid fa-box-open fs-3 text-primary"></i>
-            <h1 class="section-title mb-0 h3">A csomag tartalmazza</h1>
+        <div class="d-flex align-items-start gap-3 mb-3">
+            <i class="fa-solid fa-box-open fa-2x text-primary"></i>
+            <div>
+                <h1 class="section-title mb-1 h3">A csomagolás tartalma</h1>
+                <p class="text-muted mb-0">{{ $packageIntro }}</p>
+            </div>
         </div>
-        <p class="text-muted mb-4">{{ $packageIntro }}</p>
         <div class="row g-4">
-            <div class="col-6 col-md-3"><div class="package-item"><div class="package-icon"><img src="{{ asset('images/package/bracket.jpg') }}" alt="Fali konzolok"></div><strong>Fali konzolok / rögzítők</strong></div></div>
-            <div class="col-6 col-md-3"><div class="package-item"><div class="package-icon"><img src="{{ asset('images/package/valve.jpg') }}" alt="Szelepek"></div><strong>Szelepek / idomok</strong></div></div>
-            <div class="col-6 col-md-3"><div class="package-item"><div class="package-icon"><img src="{{ asset('images/package/seal.jpg') }}" alt="Tömítők"></div><strong>Tömítő elemek</strong></div></div>
-            <div class="col-6 col-md-3"><div class="package-item"><div class="package-icon"><img src="{{ asset('images/package/screws.jpg') }}" alt="Csavarok"></div><strong>Rögzítő csavarok</strong></div></div>
+            <div class="col-6 col-md-3">
+                <div class="package-item">
+                    <div class="package-icon"><img src="{{ asset('images/package/bracket.jpg') }}" alt="Fali konzolok"></div>
+                    <strong>Fali konzolok / rögzítők</strong>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="package-item">
+                    <div class="package-icon"><img src="{{ asset('images/package/valve.jpg') }}" alt="Szelepek"></div>
+                    <strong>Szelepek / idomok</strong>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="package-item">
+                    <div class="package-icon"><img src="{{ asset('images/package/seal.jpg') }}" alt="Tömítők"></div>
+                    <strong>Tömítő elemek</strong>
+                </div>
+            </div>
+            <div class="col-6 col-md-3">
+                <div class="package-item">
+                    <div class="package-icon"><img src="{{ asset('images/package/screws.jpg') }}" alt="Csavarok"></div>
+                    <strong>Rögzítő csavarok</strong>
+                </div>
+            </div>
         </div>
-        <p class="text-muted small mt-3">Továbbá: egyéb szükséges alap szerelvények a felszereléshez.</p>
+        <p class="text-muted small mt-3 mb-0">Továbbá: egyéb szükséges alap szerelvények a felszereléshez.</p>
         <a href="{{ route('products.index') }}" class="btn-primary-shop mt-3">Radiátorok megtekintése</a>
     </div>
 </div>

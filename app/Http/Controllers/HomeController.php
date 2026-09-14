@@ -12,7 +12,7 @@ class HomeController extends Controller
 {
     public function index(CartService $cart, SeoService $seo)
     {
-        $products = Product::active()->take(6)->get();
+        $products = Product::active()->take(5)->get();
         $reviews = Review::featured()->take(4)->get();
 
         return view('home', [

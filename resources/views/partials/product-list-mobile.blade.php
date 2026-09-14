@@ -5,8 +5,8 @@
             <img src="{{ $product->image_url }}" alt="{{ $product->name }}">
         </a>
         <div>
-            <a href="{{ route('products.show', $product) }}"><strong>{{ $product->size_label }}</strong></a>
-            <div class="product-price mb-2">{{ $product->formatted_price }}/db</div>
+            <a href="{{ route('products.show', $product) }}"><strong class="text-navy">{{ $product->size_label }}</strong></a>
+            <div class="product-price mb-0">{{ $product->formatted_price }}/db</div>
         </div>
         <div class="row-actions">
             <form action="{{ route('cart.add') }}" method="post" data-add-to-cart class="d-flex flex-wrap gap-2 align-items-center">
@@ -14,8 +14,8 @@
                 <input type="hidden" name="product_id" value="{{ $product->id }}">
                 @include('partials.qty')
                 <button class="btn-primary-shop" type="submit"><i class="fa-solid fa-cart-shopping"></i> Kosárba</button>
-                <a href="{{ route('products.show', $product) }}" class="btn-outline-shop">Részletek</a>
             </form>
+            <a href="{{ route('products.show', $product) }}" class="small d-inline-block mt-1">Részletek →</a>
         </div>
     </div>
 @empty

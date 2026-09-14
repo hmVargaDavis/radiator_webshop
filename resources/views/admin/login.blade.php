@@ -14,7 +14,7 @@
 <div style="width:min(420px,100%)">
     <div class="p-card">
         <div class="text-center mb-3">
-            <div class="polaris-logo mx-auto mb-2" style="width:48px;height:48px;font-size:1.2rem">R</div>
+            <div class="polaris-logo mx-auto mb-2" style="width:48px;height:48px;font-size:1.2rem"><i class="fa-solid fa-temperature-high"></i></div>
             <h1 class="h4 fw-bold mb-1">Belépés az adminba</h1>
             <p class="text-muted small mb-0">Radiátor Outlet Budapest</p>
         </div>
@@ -22,14 +22,14 @@
         <form method="post" action="{{ route('admin.login.submit') }}">
             @csrf
             <div class="mb-3">
-                <label class="form-label fw-semibold">E-mail</label>
+                <label class="form-label fw-semibold"><i class="fa-solid fa-envelope me-1"></i>E-mail</label>
                 <input type="email" name="email" class="form-control form-control-lg" required value="{{ old('email', config('shop.admin_email')) }}" autocomplete="username">
             </div>
             <div class="mb-3">
-                <label class="form-label fw-semibold">Jelszó</label>
+                <label class="form-label fw-semibold"><i class="fa-solid fa-lock me-1"></i>Jelszó</label>
                 <input type="password" name="password" class="form-control form-control-lg" required autocomplete="current-password">
             </div>
-            <button class="polaris-btn polaris-btn-primary w-100 justify-content-center" type="submit">Belépés</button>
+            <button class="polaris-btn polaris-btn-primary w-100 justify-content-center" type="submit"><i class="fa-solid fa-right-to-bracket me-1"></i> Belépés</button>
         </form>
     </div>
 </div>

@@ -69,6 +69,7 @@
   display: grid;
   place-items: center;
   font-weight: 800;
+  color: #fff;
 }
 
 .polaris-brand strong { display: block; font-size: .95rem; }

@@ -10,14 +10,12 @@
     <form action="{{ route('cart.add') }}" method="post" data-add-to-cart class="mt-auto">
         @csrf
         <input type="hidden" name="product_id" value="{{ $product->id }}">
-        <div class="d-flex flex-wrap gap-2 align-items-center mb-2">
+        <div class="d-flex flex-wrap gap-2 align-items-center">
             @include('partials.qty')
-        </div>
-        <div class="d-grid gap-2">
-            <button type="submit" class="btn-primary-shop">
+            <button type="submit" class="btn-primary-shop flex-grow-1">
                 <i class="fa-solid fa-cart-shopping"></i> Kosárba
             </button>
-            <a href="{{ route('products.show', $product) }}" class="btn-outline-shop text-center">Részletek</a>
         </div>
+        <a href="{{ route('products.show', $product) }}" class="small d-inline-block mt-2">Részletek →</a>
     </form>
 </div>
