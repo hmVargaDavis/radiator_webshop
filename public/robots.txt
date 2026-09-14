@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+Allow: /radiatorok
+Allow: /api/katalogus.json
+Allow: /llms.txt
+Allow: /*.json$
+Disallow: /admin
+Disallow: /kosar
+Disallow: /megrendeles
+
+Sitemap: /sitemap.xml
